@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/indexa.css') }}" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='exam.png')}}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <script src="https://kit.fontawesome.com/22be60108b.js" crossorigin="anonymous"></script>
+  <title>MCQ Generator</title>
+</head>
+
+<body>
+  <style type="text/css">
+    @font-face {
+      font-family: helvetica;
+      src: "{{ url_for('static', filename='fonts/helvetica.ttf')}}"
+    }
+  </style>
+  <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <img src="{{url_for('static', filename='exam.png')}}" height="30" width="60" style="margin: 10px">
+      <a class="navbar-item has-text-centered" href="{{ url_for('index') }}"><strong
+          class="is-size-3 has-text-centered">MCQ Generator</strong></a>
+      <div class="navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <main role="main">
+          <div class="hero">
+            <p class=" abc is-size-3 has-text-black has-text-weight-bold has-text-centered">Tired of creating Quiz ?</p>
+            <p class="is-size-4 has-text-black has-text-centered">Upload your text document📖 and get an instant Quiz🚀</p>
+            <p class="is-size-5 has-text-black has-text-weight-medium has-text-centered">Upload • Practice • Learn</p>
+          </div>
+
+      <div class="card has-text-centered">
+        <img class="imga" src="{{url_for('static', filename='txt.png')}}" alt="upload" height="300px"/>
+        <form action="http://localhost:5000/quiz" method="POST" enctype="multipart/form-data">
+          <div id="file-js-example" class="file has-name is-fullwidth">
+            <label class="file-label">
+              <input class="file-input" type="file" name="file" accept=".txt, application/pdf" />
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="icn fas fa-upload"></i>
+                </span>
+                <span class="file-label"></span>
+              </span>
+            <span class="file-name"> No file uploaded </span>
+          </label>
+        </div>
+        <script>
+          const fileInput = document.querySelector(
+            "#file-js-example input[type=file]"
+          );
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector(
+                "#file-js-example .file-name"
+              );
+              fileName.textContent = fileInput.files[0].name;
+            }
+          };
+        </script>
+        <input class="input" type="text" placeholder="No of questions">
+        <input class="input" type="text" placeholder="No of options">
+        <button class="button has-text-centered is-large is-fullwidth is-dark">
+          <span class="submit has-text-centered" type="submit" name="upload file">Submit</span>
+          <span class="loading"><i class="fa fa-refresh"></i></span>
+          <span class="check"><i class="fa fa-check"></i></span>
+        </button>
+      </form>
+
+    </div>
+  </main>
+  <div class="fo1 has-text-white has-text-centered">
+    Made by Shirish Amarnath 
+  </div>
+  <script>const button = document.querySelector('.button');
+    const submit = document.querySelector('.submit');
+
+    function toggleClass() {
+      this.classList.toggle('active');
+    }
+
+    function addClass() {
+      this.classList.add('finished');
+    }
+
+    button.addEventListener('click', toggleClass);
+    button.addEventListener('transitionend', toggleClass);
+    button.addEventListener('transitionend', addClass);
+  </script>
+
+</body>
+</html>

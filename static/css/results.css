@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+body {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: points;
+  background-color:  #faeba7;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "helvetica", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding-top: 150px;
+}
+
+main {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 40px 30px;
+  width: 95%;
+  max-width: 590px;
+  margin: 27px auto ;
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.fo1{
+  margin-top: 80px;
+  background-color: #363636;
+  padding: 10px;
+}
